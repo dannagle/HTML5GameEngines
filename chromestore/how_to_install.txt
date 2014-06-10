@@ -1,0 +1,7 @@
+In Chrome:
+
+1. Settings -> Extensions
+
+2. Enable Developer Mode
+
+3. Load this directory as an unpacked extension

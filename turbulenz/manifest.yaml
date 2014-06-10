@@ -1,0 +1,20 @@
+aspect_ratio: '16:9'
+canvas_main: app.canvas.js
+cover_art: cover_art.png
+deploy_files:
+- app.canvas.js
+- mapping_table.json
+- staticmax/*
+deployed: Never
+engine_version: '0.26'
+flash_main: ''
+has_notifications: false
+is_multiplayer: false
+is_temp: false
+mapping_table: mapping_table.json
+modified: 12:40 | 22/06/2013
+path: C:\Users\dannagle\html5book\engines\turbulenz_engine\apps\skymarble
+plugin_main: ''
+slug: skymarble
+title: Sky Marble
+title_logo: ''

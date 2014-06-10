@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Audio Test</title>
+  <script src="modernizr.custom.html5audio.js"></script>
+  <script>
+function loadAudio() {
+    
+  var audio = document.getElementById("modernizrload"); 
+  var audiochoice = document.getElementById("modernizrchoice"); 
+  if(Modernizr.audio) { 
+    // Which audio format to use?
+    if (Modernizr.audio.ogg) {
+      //Use ogg
+	  audio.innerHTML = "<audio src='illuminations-dannagle.ogg' controls ></audio>";
+      audiochoice.innerHTML = "Loaded Ogg";
+      return;
+    } 
+    if (Modernizr.audio.mp3) {
+      //Use mp3
+      audio.innerHTML = "<audio src='illuminations-dannagle.mp3' controls ></audio>";
+      audiochoice.innerHTML = "Loaded MP3";
+      return;
+    } 
+    //No audio format worked?
+    audio.innerHTML = "Your browser does not support Ogg/MP3.";
+    return;
+  } else {
+   // Audio not supported.
+    audio.innerHTML = "Your browser does not support HTML5 Audio.";
+    return;
+  }
+}
+  </script>
+<script>
+</script>
+<body onload="loadAudio()">
+
+<br>Play 5s Wav<br>
+<audio src="5seconds.wav" controls >
+No Wav Support
+</audio>
+
+<br><hr><br>
+<br>Play 10s MP3<br>
+<audio src="10seconds.mp3" controls >
+  No MP3 Support
+</audio>
+
+<br><hr><br>
+<br>Play 15s Ogg<br>
+<audio src="15seconds.ogg" controls >
+  No Ogg Support
+</audio>
+
+<br><hr><br>
+<br>Let browser choose preferred format to play (10s MP3 or 15s Ogg)<br>
+<audio 	controls >
+   <source src="15seconds.ogg" >
+   <source src="10seconds.mp3" >
+   No Ogg/MP3 Support
+</audio>
+
+
+<br><hr><br>
+<br>Dynamically load supported format using Modernizr<br>
+<div id="modernizrload"></div>
+<div id="modernizrchoice"></div>
+
+</body>
+</html>

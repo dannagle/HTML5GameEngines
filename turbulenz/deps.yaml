@@ -1,0 +1,47 @@
+# Syntax:
+#
+# Either:
+# - assetpath
+#
+# or:
+# - path: path to input asset
+# - logical_path: [Optional] Change the logical mapping table name (defaults to path)
+# - install: [Optional] copy the built asset to staticmax (defaults to true)
+# - deps: [Optional] extra definitions that the build tool requires
+# - args: [Optional] extra arguments for the build tool]
+- shaders/debug.cgfx
+- shaders/shadowmapping.cgfx
+- shaders/zonly.cgfx
+- shaders/font.cgfx
+- shaders/forwardrendering.cgfx
+- shaders/forwardrenderingshadows.cgfx
+- shaders/simplesprite.cgfx
+- textures/default_light.png
+- textures/opensans-8_0.png
+- textures/opensans-16_0.png
+- textures/opensans-32_0.png
+- textures/opensans-64_0.png
+- textures/opensans-128_0.png
+- fonts/opensans-8.fnt
+- fonts/opensans-16.fnt
+- fonts/opensans-32.fnt
+- fonts/opensans-64.fnt
+- fonts/opensans-128.fnt
+- textures/clouds.jpg
+- models/torus_.dae
+- textures/bluemarble.png
+- textures/redmarble.png
+- textures/redmarble_block.png
+- textures/base.png
+- textures/bluegreen_block.png
+- textures/bricks.jpg
+- sounds/win_effect.ogg
+- sounds/win_effect.mp3
+- sounds/lose_effect.ogg
+- sounds/lose_effect.mp3
+- sounds/hit.ogg
+- sounds/hit.mp3
+- sounds/hit2.ogg
+- sounds/hit2.mp3
+- textures/yellowbluemarble.png
+- textures/light_transparent.png

@@ -1,0 +1,19 @@
+body {
+  margin: 10px;
+  width: auto;
+}
+
+#guides ul li,
+#samples .list {
+  float: none;
+  margin: 0 auto 10px;
+  width: 172px;
+}
+
+#share-app li {
+  margin: 0 8px 4px 0;
+}
+
+#share-app {
+  width: auto;
+}

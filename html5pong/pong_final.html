@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 6</title>
+</head>
+<script>
+
+function onload() {
+  
+  var leftArrowHit = false;
+  var rightArrowHit = false;
+  
+  document.onkeydown = function(event){
+    console.log(event.keyCode); //what key did I press?
+    if(event.keyCode == 39) //right arrow
+    {
+      rightArrowHit = true;
+    }
+    if(event.keyCode == 37) //left arrow
+    {
+      leftArrowHit = true;
+      
+    }
+    if(event.keyCode == 32) //space
+    {
+      spaceBarHit = true;
+     
+    }
+  }
+  
+  var GAME_FPS = 60;  
+  var BACKGROUND_COLOR = '#dbdbdb';
+  var PADDLE_WIDTH = 100;  
+  var PADDLE_HEIGHT = 10;  
+  var PADDLE_COLOR = '#000000';  
+  var BALL_COLOR = '#000000';
+  var BALL_RADIUS = 10;  
+  
+  var ball = new Object();
+  var topPaddle = new Object();
+  var bottomPaddle = new Object();
+  
+  
+  var pointsPlayer = 0;
+  var pointsComputer = 0;
+  
+    
+  function initGameObjects()
+  {
+    ball['x'] = 40;
+    ball['y'] = 240;
+    ball['xspeed'] = 1;
+    ball['yspeed'] = 3;
+    
+    topPaddle['x'] =200 + Math.round(Math.random() * 20);
+    topPaddle['y'] =10; + Math.round(Math.random() * 20);
+    bottomPaddle['x'] =100;
+    bottomPaddle['y'] =460;
+    
+  }
+
+  
+  var canvas=document.getElementById("canvas");
+  var context=canvas.getContext("2d");
+  
+  function drawScore()
+  {
+    if(pointsPlayer > 0 || pointsComputer > 0)
+    {
+      context.font = 'bold 15px Times';
+      context.fillText("You:" + pointsPlayer +"  CPU:" + pointsComputer, 5, 12);
+    }
+  }
+  
+  function computerAI()
+  {
+    if(ball.yspeed < 0)
+    {
+      if(ball.x < (topPaddle.x + PADDLE_WIDTH / 2))
+      {
+        topPaddle.x--;
+      } else {
+        topPaddle.x++;
+      }
+    }
+    
+    if(topPaddle.x <= 0)
+    {
+      topPaddle.x = 0;
+    }
+    if(topPaddle.x >= (canvas.width - PADDLE_WIDTH))
+    {
+      topPaddle.x = canvas.width - PADDLE_WIDTH;
+    }
+    
+  }
+  
+  function keybardEvents()
+  {
+    if(leftArrowHit)
+    {
+      bottomPaddle.x -= 3;
+      leftArrowHit = false;
+    }
+    if(rightArrowHit)
+    {
+      bottomPaddle.x += 3;
+      rightArrowHit = false;
+    }
+    if(bottomPaddle.x <= 0)
+    {
+      bottomPaddle.x = 0;
+    }
+    if(bottomPaddle.x >= (canvas.width - PADDLE_WIDTH))
+    {
+      bottomPaddle.x = canvas.width - PADDLE_WIDTH;
+    }
+ }
+  
+  function hitDetect()
+  {
+    
+    if((ball.y +BALL_RADIUS)  >= (bottomPaddle.y))
+    {
+      if(bottomPaddle.x <= ball.x && ball.x <= (bottomPaddle.x + PADDLE_WIDTH))
+      {
+        console.log("bottomPaddle hit", ball.x, ball.y, bottomPaddle.x, bottomPaddle.y);
+        ball.yspeed = ball.yspeed * -1;
+        ball.y = bottomPaddle.y - BALL_RADIUS;
+        return;
+      }
+      
+    }
+
+
+    if((ball.y -BALL_RADIUS) <= (topPaddle.y+PADDLE_HEIGHT))
+    {
+      if(topPaddle.x <= ball.x && ball.x <= (topPaddle.x + PADDLE_WIDTH))
+      {
+        console.log("topPaddle hit", ball.x, ball.y, topPaddle.x, topPaddle.y);
+        ball.yspeed = ball.yspeed * -1;
+        ball.y = topPaddle.y + BALL_RADIUS+PADDLE_HEIGHT;
+        return;
+      }
+      
+    }
+
+    if((ball.x + BALL_RADIUS) >= canvas.width || (ball.x - BALL_RADIUS) <= 0 )
+    {
+      ball.xspeed = ball.xspeed * -1;
+    }
+
+    
+    if(ball.y > (canvas.height + BALL_RADIUS))
+    {
+      pointsComputer++;
+      initGameObjects();
+      console.log("point for computer",pointsComputer);
+    }
+      
+    if(ball.y < (0 -  BALL_RADIUS) )
+    {
+      pointsPlayer++;
+      initGameObjects();
+      console.log("point for player", pointsPlayer);
+     
+    }
+    
+  }
+
+  
+  function drawBackground()
+  {
+    context.fillStyle = BACKGROUND_COLOR;  //color for rectangle
+    context.fillRect(0, 0, canvas.width, canvas.height); //draw rectangle
+  }
+  
+  function drawBall()
+  {
+    context.strokeStyle = BALL_COLOR;  //color for ball
+    context.beginPath();  //start a draw path
+    ball.x += (1 * ball.xspeed);
+    ball.y += (1 * ball.yspeed);
+    context.arc(ball.x,ball.y,BALL_RADIUS,0,Math.PI*2,true); // draw ball
+    context.fill(); //close path and fill in the shape
+    
+    
+  }
+  
+  function drawTopPaddle()
+  {
+    context.fillStyle = PADDLE_COLOR;  //color for inside shapes
+    context.fillRect(topPaddle.x,topPaddle.y,PADDLE_WIDTH,PADDLE_HEIGHT); // draw top paddle 
+  }  
+  
+  function drawBottomPaddle()
+  {
+    context.fillStyle = PADDLE_COLOR;  //color for inside shapes
+    context.fillRect(bottomPaddle.x,bottomPaddle.y,PADDLE_WIDTH,PADDLE_HEIGHT); // draw top paddle 
+  }
+  
+  function pongGame() {
+    
+    keybardEvents();
+    computerAI();
+    drawBackground();
+    drawTopPaddle();
+    drawBottomPaddle();
+    drawBall();
+    hitDetect();
+    drawScore();
+
+  }
+  
+  initGameObjects();
+  window.setInterval(pongGame, 1000 /  GAME_FPS); //start game loop
+
+}
+
+
+</script>
+<body onload="onload()">
+    <canvas id="canvas" width="320" height="480">Get a better browser!</canvas>
+</body>
+</html>

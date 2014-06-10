@@ -1,0 +1,359 @@
+/*
+  title: base css
+*/
+
+
+/* =global elements
+--------------------------------------------- */
+body {
+  color: #999;
+  font: 14px/1.5em "Lucida Grande", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: 720px;
+  margin: 20px;
+}
+
+a:link, a:visited {
+  color: #3b5998;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+h1 {
+  color: #656565;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* ------------------------------------------ */
+
+/* =header
+--------------------------------------------- */
+header {
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-top: 1px solid #b3b3b3;
+  font-size: 11px;
+  padding: 24px 18px;
+}
+
+header h1 {
+  border-bottom: 2px solid #e9e9e9;
+  margin: 0 0 9px;
+  padding: 2px 0 8px;
+}
+
+header #picture + div {
+  margin-left: 82px;
+}
+
+header #picture {
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-size: 64px;
+  float: left;
+  margin-right: 18px;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+}
+
+header .tagline {
+  float: left;
+}
+
+#share-app {
+  float: right;
+  width: 344px;
+}
+
+#share-app ul {
+  float: right;
+}
+
+#share-app p {
+  float: left;
+  margin-left: 8px;
+}
+
+#share-app li {
+  float: left;
+  list-style: none;
+  margin-left: 8px;
+}
+/* ------------------------------------------ */
+
+/* =buttons
+--------------------------------------------- */
+.facebook-button:link, .facebook-button:visited {
+  background-color: #eee;
+  background-image: -moz-linear-gradient(top, #fdfdfd, #eaebeb);
+  background-image: -ms-linear-gradient(top, #fdfdfd, #eaebeb);
+  background-image: -o-linear-gradient(top, #fdfdfd, #eaebeb));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eaebeb));
+  background-image: -webkit-linear-gradient(top, #fdfdfd, #eaebeb);
+  background-image: linear-gradient(top, #fdfdfd, #eaebeb);
+  border: 1px solid #a9a9a9;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  color: #4f4f4f;
+  display: -moz-inline-box;
+  display: inline-block;
+  font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .33);
+}
+
+.facebook-button span {
+  background: url("../images/sprites.png") no-repeat;
+  padding: 0 7px 0 21px;
+}
+
+.facebook-button .speech-bubble {
+  background-position: 6px 3px;
+}
+
+.facebook-button .plus {
+  background-position: 6px -17px;
+}
+
+.facebook-button .apprequests {
+  background-position: 6px -37px;
+}
+
+.button:link, .button:visited {
+  background-color: #7a90c0;
+  background-image: -moz-linear-gradient(top, #97afe2, #6073a1);
+  background-image: -ms-linear-gradient(top, #97afe2, #6073a1);
+  background-image: -o-linear-gradient(top, #97afe2, #6073a1);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#97afe2), to(#6073a1));
+  background-image: -webkit-linear-gradient(top, #97afe2, #6073a1);
+  background-image: linear-gradient(top, #97afe2, #6073a1);
+  border: none;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .5), 0 1px 1px rgba(255, 255, 255, .33) inset;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .5), 0 1px 1px rgba(255, 255, 255, .33) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .5), 0 1px 1px rgba(255, 255, 255, .33) inset;
+  color: #1d222c;
+  display: inline-block;
+  font: bold 14px "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+  line-height: 32px;
+  padding: 0 25px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .2);
+}
+/* ------------------------------------------ */
+
+/* =get started
+--------------------------------------------- */
+#get-started {
+  background: url("../images/get-started-bg.jpg");
+  border: 1px solid #353d4f;
+  height: 105px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .29);
+  padding: 32px 0 0;
+}
+
+#get-started p {
+  color: #fff;
+  font-family: "CorbelRegular";
+  font-size: 24px;
+  height: 23px;
+  margin-bottom: 24px;
+}
+
+#get-started p span {
+  font-family: "HybreaRegular";
+  font-size: 22px;
+}
+/* ------------------------------------------ */
+
+/* =guides/samples spacing
+--------------------------------------------- */
+#guides h1,
+#samples h1 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#guides, #samples {
+  padding: 20px 5px 20px 10px;
+}
+
+#guides ul li,
+#samples .list {
+  float: left;
+  margin-right: 3px;
+  width: 172px;
+}
+
+#guides ul li p,
+#samples ul {
+  padding: 0 4px;
+}
+/* ------------------------------------------ */
+
+/* =guides
+--------------------------------------------- */
+#guides {
+  border-bottom: 1px solid #b3b3b3;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+}
+
+#guides ul li {
+  font-size: 11px;
+  list-style: none;
+}
+
+#guides ul li p {
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  line-height: 20px;
+  text-align: justify;
+}
+
+#guides ul li a.icon {
+  background: url("../images/sprites.png") no-repeat;
+  display: block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-top: 124px;
+  text-align: center;
+}
+
+#guides ul li a.websites {
+  background-position: 35px -87px;
+}
+
+#guides ul li a.mobile-apps {
+  background-position: 35px -231px;
+}
+
+#guides ul li a.apps-on-facebook {
+  background-position: 35px -375px;
+}
+
+#guides ul li a.heroku {
+  background-position: 35px -519px;
+}
+/* ------------------------------------------ */
+
+/* =samples
+--------------------------------------------- */
+#samples {
+  background-image: url("../images/samples-bg.png");
+  border-bottom: 1px solid #dadada;
+  border-left: 1px solid #b3b3b3;
+  border-right: 1px solid #b3b3b3;
+  border-top: 1px solid #fff;
+}
+
+#samples h3 {
+  background: url("../images/header-sketch.png") no-repeat;
+  color: #646464;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 29px;
+  text-align: center;
+}
+
+#samples ul {
+  background: url("../images/picture-sketch.png") 4px 8px;
+  background-repeat: repeat-y;
+  height: 161px;
+  overflow: hidden;
+  padding-top: 8px;
+}
+
+#samples li {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  color: #7c7c7c;
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  height: 32px;
+  margin-bottom: 11px;
+  overflow: hidden;
+  position: relative;
+}
+
+#samples li a:link,
+#samples li a:visited {
+  color: #7c7c7c;
+  display: block;
+  line-height: 32px;
+  padding-left: 36px;
+}
+
+#samples .list img {
+  height: auto;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+}
+
+#samples .inline ul {
+  background-repeat: repeat;
+}
+
+#samples .inline li {
+  float: left;
+  margin-left: 12px;
+  overflow: hidden;
+  padding: 0;
+  width: 32px;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+#samples .inline li.first-column {
+  margin-left: 0;
+}
+
+#samples .inline li a:link,
+#samples .inline li a:visited {
+  display: block;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+
+/* ------------------------------------------ */
+
+/* =clearfix
+--------------------------------------------- */
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
