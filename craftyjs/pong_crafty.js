@@ -152,8 +152,9 @@ craftycanvas.style.top="0px";
                 .attr({x: 100, y: 100, w: BALL_RADIUS, h: BALL_RADIUS,
                       xspeed: 2, yspeed: 4
                       })
-                .animate('BallBlinking', 2,1,4) //setup animation
-                .animate('BallBlinking', 5, -1) //start animation
+                      
+				.reel('BallBlinking', 100, [[2,1], [3,1], [4,1], [5,1]])  //2,1 
+                .animate('BallBlinking', -1) //start animation
                 .bind('EnterFrame', function () {
                   
                   this.x += this.xspeed;
