@@ -4,14 +4,13 @@ HTML5 Game Engines Book
 This is the example source code from the book HTML5 Game Engines published by CRC Press.
 
   - Playable demos (and zip files) are at http://HTML5GameEnginesBook.com/
-  - Book may be purchased from http://www.crcpress.com/product/isbn/9781466594005
-  - Coupon code: 193CM
+  - Book / eBook may be purchased from http://www.crcpress.com/product/isbn/9781466594005
 
 Game engines featured in the book are:
   - CraftyJS (http://craftyjs.com/)
   - EaselJS (http://www.createjs.com/#!/EaselJS )
   - ImpactJS (http://impactjs.com/)
-  - Turbulenz (http://turbulenz.com)
+  - Turbulenz (http://ga.me/)
 
 All the engine are distributed with respect to their license. The ImpactJS engine is *not* distributed in its raw form. It can be purchased from the site listed earlier.
 
@@ -29,9 +28,7 @@ These engines are distributed with respect to their licenses.
 Installation
 --------------
 
-```sh
-git clone [git-repo-url] 
-```
+```sh git clone https://github.com/dannagle/HTML5GameEngines.git ```
 
 
 License
